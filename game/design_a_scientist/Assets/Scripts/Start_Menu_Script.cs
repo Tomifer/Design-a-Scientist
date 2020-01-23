@@ -10,4 +10,9 @@ public class Start_Menu_Script : MonoBehaviour
         Debug.Log("Quit!");
         Application.Quit();
     }
+
+    public void StartGame ()
+    {
+        SceneManager.LoadScene("Game");
+    }
 }
