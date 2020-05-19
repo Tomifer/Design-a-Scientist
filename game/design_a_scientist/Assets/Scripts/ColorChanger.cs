@@ -6,52 +6,22 @@ public class ColorChanger : MonoBehaviour
 {
 
     public SpriteRenderer body;
+    public Color[] colors;
 
-    public Color color1;
-    public Color color2;
-    public Color color3;
-    public Color color4;
+    int index = 0;
 
-    public int whatColor = 1;
-
-    void Update()
-    {
-        if (whatColor == 1)
-        {
-            body.color = color1;
-        }
-        else if (whatColor == 2)
-        {
-            body.color = color2;
-        }
-        else if (whatColor == 3)
-        {
-            body.color = color3;
-        }
-        else if (whatColor == 4)
-        {
-            body.color = color4;
-        }
+    void Start(){
+        ChangeColor(0);
     }
 
-    public void ChangeColor1()
+    public void ChangeColor(int i)
     {
-        whatColor = 1;
+        body.color = colors[i];
+        index = i;
     }
 
-    public void ChangeColor2()
-    {
-        whatColor = 2;
-    }
-
-    public void ChangeColor3()
-    {
-        whatColor = 3;
-    }
-
-    public void ChangeColor4()
-    {
-        whatColor = 4;
+    public int getIndex() {
+        return index;
     }
 
 }
