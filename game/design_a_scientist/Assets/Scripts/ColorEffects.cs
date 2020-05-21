@@ -5,18 +5,17 @@ using UnityEngine;
 public class ColorEffects : MonoBehaviour
 {
     Texture2D mColorSwapTex;
-    public Color newColor;
     SpriteRenderer mSpriteRenderer;
     Color[] mSpriteColors;
 
     void Start()
     {
-        mSpriteRenderer = GetComponent<SpriteRenderer>();
         InitColorSwapTex();
     }
 
     public void InitColorSwapTex()
     {
+        mSpriteRenderer = GetComponent<SpriteRenderer>();
         Texture2D colorSwapTex = new Texture2D(256, 1, TextureFormat.RGBA32, false, false);
         colorSwapTex.filterMode = FilterMode.Point;
     
@@ -37,7 +36,7 @@ public class ColorEffects : MonoBehaviour
         mColorSwapTex.SetPixel((int)index, 0, color);
     }
 
-    public void go()
+    public void selectColor(Color newColor)
     {
         SwapColor(51, newColor);
         mColorSwapTex.Apply();
