@@ -56,12 +56,10 @@
   </ItemGroup>
   <ItemGroup>
      <Compile Include="Assets\FeatureManager.cs" />
+     <Compile Include="Assets\Scripts\BodyEditor.cs" />
      <Compile Include="Assets\Scripts\CameraPos.cs" />
-     <Compile Include="Assets\Scripts\Character.cs" />
      <Compile Include="Assets\Scripts\Character_Editor.cs" />
-     <Compile Include="Assets\Scripts\ColorChanger.cs" />
      <Compile Include="Assets\Scripts\ColorEffects.cs" />
-     <Compile Include="Assets\Scripts\FeatureChanger.cs" />
      <Compile Include="Assets\Scripts\Start_Menu_Script.cs" />
      <Compile Include="Assets\Scripts\TotalFeatureEditor.cs" />
      <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\Benchmark01.cs" />
@@ -104,6 +102,7 @@
      <None Include="Assets\TextMesh Pro\Examples &amp; Extras\Fonts\Oswald-Bold - OFL.txt" />
      <None Include="Assets\TextMesh Pro\Examples &amp; Extras\Fonts\Anton OFL.txt" />
      <None Include="Assets\TextMesh Pro\Resources\Shaders\TMP_SDF-Surface-Mobile.shader" />
+     <None Include="Assets\ReadMe.txt" />
      <None Include="Assets\TextMesh Pro\Resources\Shaders\TMP_SDF-Surface.shader" />
      <None Include="Assets\TextMesh Pro\Sprites\EmojiOne Attribution.txt" />
      <None Include="Assets\TextMesh Pro\Resources\Shaders\TMP_Bitmap-Custom-Atlas.shader" />
@@ -115,7 +114,7 @@
      <None Include="Assets\TextMesh Pro\Resources\Shaders\TMP_SDF-Mobile Masking.shader" />
      <None Include="Assets\TextMesh Pro\Resources\Shaders\TMP_SDF Overlay.shader" />
      <None Include="Assets\TextMesh Pro\Resources\Shaders\TMP_Bitmap-Mobile.shader" />
-     <None Include="Assets\Scripts\hope.shader" />
+     <None Include="Assets\Scripts\ColorEffectsShader.shader" />
      <None Include="Assets\TextMesh Pro\Fonts\LiberationSans - OFL.txt" />
      <None Include="Assets\TextMesh Pro\Resources\Shaders\TMP_SDF-Mobile.shader" />
      <None Include="Assets\QS\Abstract backgrounds\Documentation\Readme.txt" />

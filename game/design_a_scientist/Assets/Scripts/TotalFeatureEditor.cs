@@ -9,13 +9,22 @@ public class TotalFeatureEditor : MonoBehaviour
     public Sprite[] parts;
     public Color[] colors;
     public bool usesColorEffects;
-    public ColorEffects colorEffect;
+    public ColorEffects colorEffect = null;
     public int indexColor = 0;
     public int indexPart = 0;
 
     void Start(){
-        ChangeColor(0);
+        if(usesColorEffects) {
+            colorEffect.InitColorSwapTex();
+        }
+        if(colors.Length > 0) {
+            ChangeColor(0);
+        }
         ChangePart(0);
+    }
+
+    public TotalFeatureEditor() {
+
     }
 
     public void ChangePart(int i)
@@ -23,7 +32,6 @@ public class TotalFeatureEditor : MonoBehaviour
         part.sprite = parts[i];
         indexPart = i;
         if(usesColorEffects){
-            colorEffect.InitColorSwapTex();
             colorEffect.selectColor(colors[indexColor]);
         }
     }
