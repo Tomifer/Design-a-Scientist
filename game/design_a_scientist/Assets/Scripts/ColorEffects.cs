@@ -43,4 +43,12 @@ public class ColorEffects : MonoBehaviour
             mColorSwapTex.Apply();
         }
     }
+
+    public void selectColor(int rValue, Color newColor)
+    {
+        if(newColor != null){
+            SwapColor(rValue, newColor);
+            mColorSwapTex.Apply();
+        }
+    }
 }
