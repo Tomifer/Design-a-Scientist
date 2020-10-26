@@ -66,6 +66,8 @@ public class SaveData : MonoBehaviour
     public Text name;
     public Text id;
     public TextMeshProUGUI  description;
+    public Text test;
+    public Text test1;
 
     // Start is called before the first frame update
     void Start()
@@ -74,11 +76,13 @@ public class SaveData : MonoBehaviour
 
     public void moveMain()
     {
-        inputData();
+        StartCoroutine(inputData());
+        /*
         if(making_par)
             SceneManager.LoadScene (sceneBuildIndex:1);
         else
             SceneManager.LoadScene (sceneBuildIndex:4);
+            */
     } 
 
     public void moveAvatarGender(int i)
@@ -151,14 +155,16 @@ public class SaveData : MonoBehaviour
     }
 
     IEnumerator inputData(){
+        Debug.Log("Starting Data Input");
         bool successful = true;
         WWWForm form = new WWWForm();
         //This url will likely need to be updated
         WWW www = new WWW("http://107.15.99.155:8080/PHP/fromphp.php", form);
         yield return www;
+        test.text = www.text;
         String temp = www.text;
         String[] vals = temp.Split(',');
-
+    
         if (vals[0].Equals("1"))
             tutorial = true;
         else 
@@ -171,14 +177,16 @@ public class SaveData : MonoBehaviour
             extra_info = true;
         else 
             extra_info = false;
-            
+
         if (www.error != null)
         {
+            Debug.Log("Failed input");
             successful = false;
         } else {
-            Debug.Log(temp);
+            Debug.Log("Success");
             successful = true;
         }
+        Debug.Log("Finished Data Input");
     }
 
     IEnumerator outputData(){

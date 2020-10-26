@@ -8,25 +8,25 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Start_Menu.unity
     guid: 8a6d794959fe42047ba58913b9a1bae4
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/Par_Gender_Menu.unity
     guid: b9eeb5da053d7214991b9d1d1c5d7a5d
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/Par_Info.unity
     guid: 63f68731597277e42800351566279568
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/Par_Create.unity
     guid: 07736df7fe996134db2d9c0772beb1e6
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/Avatar_Gender_Menu.unity
     guid: ac5266a1e27968e4fbbe0dc402a6376a
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/Avatar_Info.unity
     guid: 83f0ba504f84cd0438bebe5541fe0763
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/Avatar_Create.unity
     guid: 4dedbd4cf94979a4981c550113a5f76c
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/Tutoral_Creation.unity
     guid: 3bf4e9738fafe3b40a6c9e53a914a86b
   m_configObjects: {}

@@ -19,7 +19,7 @@ public class Character_Editor : MonoBehaviour
     public bool glassesOn = false;
     int featureIndex = 0;
     public bool forAvatar;
-    SaveData save;
+    public SaveData save;
 
     public void storeData(){
         if(forAvatar){
