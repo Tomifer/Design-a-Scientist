@@ -37,10 +37,10 @@ public class SaveData : MonoBehaviour
     public static int avatar_pant_color = -1;
     public static int avatar_shoe = -1;
     public static int avatar_shoe_color = -1;
-    public static String avatar_tucked = "";
-    public static String avatar_glasses = "";
-    public static String avatar_name = "";
-    public static String avatar_description = "";
+    public static String avatar_tucked = " ";
+    public static String avatar_glasses = " ";
+    public static String avatar_name = " ";
+    public static String avatar_description = " ";
     
     //Used in describing a participant
     public static int par_gender = -1;
@@ -56,11 +56,11 @@ public class SaveData : MonoBehaviour
     public static int par_pant_color = -1;
     public static int par_shoe = -1;
     public static int par_shoe_color = -1;
-    public static String par_tucked = "";
-    public static String par_glasses = "";
-    public static String par_id = "";
-    public static String par_name = "";
-    public static String par_description = "";
+    public static String par_tucked = " ";
+    public static String par_glasses = " ";
+    public static String par_id = " ";
+    public static String par_name = " ";
+    public static String par_description = " ";
 
     //Variables used when gathering information
     public Text name;
@@ -77,12 +77,6 @@ public class SaveData : MonoBehaviour
     public void moveMain()
     {
         StartCoroutine(inputData());
-        /*
-        if(making_par)
-            SceneManager.LoadScene (sceneBuildIndex:1);
-        else
-            SceneManager.LoadScene (sceneBuildIndex:4);
-            */
     } 
 
     public void moveAvatarGender(int i)
@@ -107,9 +101,12 @@ public class SaveData : MonoBehaviour
 
     public void moveParDescription()
     {
-        par_id = id.text;
-        par_name = name.text;
-        par_description = description.text;
+        if (id.text != null)
+            par_id = name.text;
+        if (name.text != null)
+            par_name = name.text;
+        if (description.text != null)
+            par_name = description.text;
         if(making_par)
             SceneManager.LoadScene (sceneBuildIndex:4);
         else {
@@ -120,8 +117,11 @@ public class SaveData : MonoBehaviour
 
     public void moveAvatarDescription()
     {
-        avatar_name = name.text;
-        avatar_description = description.text;
+        if (name.text != null)
+            avatar_name = name.text;
+        if (description.text != null)
+            avatar_description = description.text;
+
         if(making_par) {
             StartCoroutine(outputData());
             SceneManager.LoadScene (sceneBuildIndex:0);
@@ -159,7 +159,7 @@ public class SaveData : MonoBehaviour
         bool successful = true;
         WWWForm form = new WWWForm();
         //This url will likely need to be updated
-        WWW www = new WWW("http://107.15.99.155:8080/PHP/fromphp.php", form);
+        WWW www = new WWW("https://designascientist.psychology.chass.ncsu.edu/PHP/fromphp.php", form);
         yield return www;
         test.text = www.text;
         String temp = www.text;
@@ -173,7 +173,7 @@ public class SaveData : MonoBehaviour
             making_par = true;
         else 
             making_par = false;
-        if (vals[2].Equals("1"))
+        if (vals[2].Equals("1") || vals[2].Equals("0"))
             extra_info = true;
         else 
             extra_info = false;
@@ -187,6 +187,11 @@ public class SaveData : MonoBehaviour
             successful = true;
         }
         Debug.Log("Finished Data Input");
+
+        if(making_par)
+            SceneManager.LoadScene (sceneBuildIndex:1);
+        else
+            SceneManager.LoadScene (sceneBuildIndex:4);
     }
 
     IEnumerator outputData(){
@@ -246,7 +251,7 @@ public class SaveData : MonoBehaviour
         form.AddField("date", date);
 
         //This url will likely need to be updated
-        WWW www = new WWW("http://107.15.99.155:8080/PHP/fromunity.php", form);
+        WWW www = new WWW("https://designascientist.psychology.chass.ncsu.edu/PHP/fromunity.php", form);
         
         yield return www;
         if (www.error != null)

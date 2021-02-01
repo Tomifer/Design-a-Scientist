@@ -24,6 +24,7 @@ public class BodyEditor : MonoBehaviour
     public void ChangeSkinColor(int i)
     {
         headEffect.ChangeColor(i);
+        indexSkinColor = i;
         for(int p = 0; p < bodyParts.Length; p++) {
             bodyParts[p].color = colors[i];
         }
